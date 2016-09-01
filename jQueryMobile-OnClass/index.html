@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="jQueryMobile/jquery.js"></script>
+    <script src="jQueryMobile/jquery.mobile-1.4.5.js"></script>
+    <link rel="stylesheet" href="jQueryMobile/jquery.mobile-1.4.5.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="main.js"></script>
+</head>
+<body>
+
+<!--data-role = "page"-->
+<!--
+一般page都会有一个ID 用来区分 是哪一个页面 可以在同一个HTML文件中 存在多个页面
+-->
+<div data-role="page" id="home">
+
+    <!--导航栏-->
+    <div data-role="header" data-position="fixed">
+        <h1>首页</h1>
+    </div>
+    <!--class="ui-content" 可以让内容 与屏幕的边界有一定的距离-->
+    <div data-role="main" class="ui-content">
+        <p>内容部分</p>
+
+        <!--
+        组合按钮（控制组）data-role = "controlgroup"
+        可以把一组按钮 放到一个 角色是controlgroup的容器中
+        -->
+        <!--
+        组合按钮/控制组 默认是垂直方向vertical
+        如果想让他是 水平方向  需要设置data-type = "horizontal"
+        -->
+        <div data-role="controlgroup">
+            <a href="#" data-role="button" class="ui-btn ui-icon-camera ui-btn-icon-left">拍照</a>
+            <a href="#" data-role="button" class="ui-btn ui-icon-grid ui-btn-icon-left">相册</a>
+            <a href="#" data-role="button" class="ui-btn ui-icon-video ui-btn-icon-left">录像</a>
+            <a href="#" data-role="button" class="ui-btn ui-icon-back ui-btn-icon-left">取消</a>
+        </div>
+
+        <p>水平方向 分段选择按钮</p>
+        <div data-role="controlgroup" data-type = "horizontal">
+            <a href="#" data-role="button" data-icon="camera">国际新闻</a>
+            <a href="#" data-role="button">国内新闻</a>
+            <a href="#" data-role="button">社会</a>
+            <a href="#" data-role="button">娱乐</a>
+        </div>
+
+<!--
+只显示图标  不显示文字 在class中 添加 ui-btn-icon-notext
+他只针对ui-btn-icon-
+data-icon是不起作用的
+-->
+        <a href="#" data-role="button" class="ui-btn ui-icon-video ui-btn-icon-left ui-btn-icon-notext" data-inline="true">1111111</a>
+<!--
+移除图标上的灰色圆圈
+也是在class中添加ui-nodisc-icon
+-->
+        <a href="#" data-role="button" class="ui-btn ui-icon-video ui-btn-icon-left ui-btn-icon-notext ui-nodisc-icon" data-inline="true">1111111</a>
+
+        <!--
+        把图标的颜色  换成 黑色
+        在class中添加ui-alt-icon
+        -->
+        <a href="#" data-role="button" class="ui-btn ui-icon-video ui-btn-icon-left ui-btn-icon-notext ui-nodisc-icon ui-alt-icon" data-inline="true">1111111</a>
+
+        <!--把a标签设置成按钮的样式 data-role="button"-->
+
+        <!--
+        按钮默认与屏幕 一样宽
+        data-inline = "true" 可设置成与按钮中的内容一样宽
+        -->
+
+        <!--跳转页面:#pageID-->
+
+        <!--页面跳转的动画 data-transition-->
+        <!--在点击跳转的按钮 部分 添加-->
+        <!--
+            fade：默认 淡入到下一页
+			flip：从后向前翻转到下一页
+			flow：抛出当前页 到下一页
+			pop：像弹出窗口那样转到下一页
+			slide：从右向左滑动到下一页
+			slidefade：从右向左滑动并淡入到下一页
+			slideup：从下到上滑动到下一页
+			slidedown：从上到下滑动到下一页
+			turn：转向下一页
+			none：无过渡效果。
+        -->
+        <a href="#detail" data-role="button" data-inline = "true" data-transition="turn">进入详情</a>
+    </div>
+    <!--底部菜单栏-->
+    <div data-role="footer" data-position="fixed">
+
+        <!--导航栏名字:navbar-->
+        <!--一组排列的连接组成-->
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="" data-icon="home" class="ui-nodisc-icon ui-alt-icon">首页</a></li>
+                <li><a href="" data-icon="eye" class="ui-nodisc-icon ui-alt-icon">发现</a></li>
+                <li><a href="" data-icon="gear" class="ui-nodisc-icon ui-alt-icon">设置</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+<div data-role="page" id="detail">
+    <div data-role="header">
+        <!--<a href="#home" data-role="button" data-inline="true">返回</a>-->
+        <!--data-rel="back" 这是专门用于返回的按钮  不需要指定返回页面的ID-->
+        <a id="backButton" href="#" data-role="button" data-rel="back">返回</a>
+        <h1>详情</h1>
+    </div>
+    <div data-role="main" class="ui-content">
+        <p>详情内容</p>
+        <a href="#detailContent" data-role="button" data-inline="true">进入详情内容</a>
+
+    <div data-role="collapsible" data-collapsed="false">
+        <h1>标题</h1>
+        <p>折叠的内容</p>
+    </div>
+        <div data-role="collapsible">
+            <h1>标题</h1>
+            <p>折叠的内容</p>
+        </div>
+        <div data-role="collapsible">
+            <h1>标题</h1>
+            <p>折叠的内容</p>
+        </div>
+
+        <div data-role="collapsible-set">
+            <div data-role="collapsible">
+                <h1>标题1</h1>
+                <p>折叠内容1</p>
+            </div>
+            <div data-role="collapsible">
+                <h1>标题2</h1>
+                <p>折叠内容2</p>
+            </div>
+            <div data-role="collapsible">
+                <h1>标题3</h1>
+                <p>折叠内容3</p>
+            </div>
+            <div data-role="collapsible">
+                <h1>标题4</h1>
+                <p>折叠内容4</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div data-role="page" id="detailContent">
+    <div data-role="header">
+        <a href="#" data-role="button" data-rel="back">返回</a>
+        <h1>详情内容</h1>
+    </div>
+    <div data-role="main" class="ui-content">
+        <p>详情的详情内容</p>
+        <a href="#home" data-role="button" data-inline="true">返回首页</a>
+    </div>
+</div>
+
+</body>
+</html>
