@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="jquery.js"></script>
+    <script src="jquery.mobile-1.4.5.js"></script>
+    <link rel="stylesheet" href="jquery.mobile-1.4.5.css" type="text/css">
+</head>
+<body>
+<!--------------------首页1--------------------------->
+    <div data-role="page" id="home" >
+        <div data-role="header" data-position="fixed" >
+            <h1>1984357601@qq.com </h1>
+
+            <!-----------------弹窗-------------->
+            <a href="#showAlert" data-role="button"   class="ui-btn-right" data-rel="popup">十</a>
+            <div data-role="popup" id="showAlert" class="ui-content" >
+               <ul data-role="listview">
+                   <li data-icon="false"><a href="#" ><img src="image/04.png" class="ui-li-icon">写邮件</a></li>
+                   <li  data-icon="false"><a href="#" ><img src="image/05.png" class="ui-li-icon">写记事</a></li>
+                   <li  data-icon="false"><a href="#" ><img src="image/06.png" class="ui-li-icon">上传文件</a></li>
+                   <li  data-icon="false"><a href="#" ><img src="image/07.png" class="ui-li-icon">设置</a></li>
+               </ul>
+            </div>
+        </div>
+        <div data-role="main" class="ui-content">
+            <form  class="ui-filterable">
+                <input type="text" data-type="search"  placeholder="搜索">
+            </form>
+
+            <ul data-role="listview">
+                <li ><a href="#inbox" ><img src="image/mail_folder_inbox_72px_1096593_easyicon.net.png" class="ui-li-icon">收件箱</a></li>
+                <li ><a href="#message" ><img src="image/open_mail_128px_552521_easyicon.net.png" class="ui-li-icon">星标邮件</a></li>
+
+                <li data-role="list-divider"><a href="#" style="color: gray;text-decoration: none">应用</a></li>
+                <li ><a href="#maillist"> <img src="image/1.png" class="ui-li-icon">通讯录</a></li>
+                <li ><a href="#greetingCard"><img src="image/2.png" class="ui-li-icon">贺卡</a></li>
+                <li ><a href="#greetingCard"><img src="image/3.png" class="ui-li-icon">读书</a></li>
+                <li ><a href="#application"><img src="image/4.png" class="ui-li-icon">更多应用</a></li>
+
+                <li data-role="list-divider"><a href="#" style="color: gray;text-decoration: none">文件夹</a></li>
+                <li ><a href="#GroupMail"><img src="image/5.png" class="ui-li-icon">群邮件</a></li>
+                <li ><a href="#drash"><img src="image/6.png" class="ui-li-icon">草稿箱</a></li>
+                <li ><a href="#send"><img src="image/7.png" class="ui-li-icon">已发送</a></li>
+                <li ><a href="#delete"><img src="image/7%20(2).png" class="ui-li-icon">已删除</a></li>
+                <li ><a href="#trash"><img src="image/8.png" class="ui-li-icon">垃圾箱</a></li>
+            </ul>
+        </div>
+    </div>
+
+<!------------------------------页面2 收件箱----------------------------------->
+    <div data-role="page" id="inbox">
+        <div data-role="header">
+            <h1>收件箱（0）</h1>
+            <a href="#" data-role="button" data-rel="back">< 邮箱</a>
+            <img src="image/Write_16.04432132964px_1158492_easyicon.net.png" class="ui-btn-right">
+        </div>
+
+        <div data-role="main">
+            <form  class="ui-filterable">
+                <input type="text" data-type="search" placeholder="搜索" id="searchFriend">
+            </form>
+            <ul data-role="listview" data-input="#searchFriend" data-filter="true" data-autodividers="true"><!--自动分组-->
+                <li><a href="#">张顺（2）未读</a></li>
+                <li><a href="#">张传安（4）未读</a></li>
+                <li><a href="#">朱继昌（1）未读</a></li>
+                <li><a href="#">孙悟空（3）未读</a></li>
+                <li><a href="#">孙悟饭（0）未读</a></li>
+                <li><a href="#">孙悟天（0）未读</a></li>
+                <li data-filtertext="m" > 张鹏（不可搜索）<a href="#"></a></li>
+            </ul>
+
+
+
+        </div>
+    </div>
+
+<!------------------------------页面3 星标邮件----------------------------------->
+<div data-role="page" id="message">
+    <div data-role="header">
+        <h1>星标邮件</h1>
+        <a href="#" data-role="button" data-rel="back">< 邮箱</a>
+        <img src="image/Write_16.04432132964px_1158492_easyicon.net.png" class="ui-btn-right">
+    </div>
+
+    <div data-role="main">
+        <form  class="ui-filterable">
+            <input type="text" data-type="search" placeholder="搜索" >
+        </form>
+
+    </div>
+</div>
+
+<!------------------------------页面4 通讯录----------------------------------->
+<div data-role="page" id="maillist">
+    <div data-role="header">
+        <h1>通讯录</h1>
+        <a href="#" data-role="button" data-rel="back">< 邮箱</a>
+        <img src="image/list_16px_1097449_easyicon.net.png" class="ui-btn-right">
+    </div>
+
+    <div data-role="main">
+        <form  class="ui-filterable">
+            <input type="text" data-type="search" placeholder="搜索" id="mess">
+        </form>
+        <div data-role="listview">
+            <li data-icon="false"><a href="#"><img src="image/Contacts_16px_1184276_easyicon.net.png" class="ui-li-icon">其他联系人</a></li>
+        </div>
+        <ul data-role="listview" data-input="#mess" data-filter="true" ><!--自动分组-->
+            <li><a href="#">AAAAA</a></li>
+            <li><a href="#">BBBBBB</a></li>
+            <li><a href="#">BBBBBB</a></li>
+            <li><a href="#">CCCCCC</a></li>
+            <li><a href="#">DDDDDD</a></li>
+            <li><a href="#">EEEEEE</a></li>
+            <li><a href="#">FFFFFF</a></li>
+            <li><a href="#">GGGGGG</a></li>
+            <li><a href="#">SSSSSS</a></li>
+            <li><a href="#">NNNNNN</a></li>
+            <li><a href="#">XXXXXX</a></li>
+        </ul>
+
+    </div>
+</div>
+
+<!------------------------------页面5 贺卡----------------------------------->
+<div data-role="page" id="greetingCard">
+    <div data-role="header">
+        <h1>星标邮件</h1>
+        <a href="#" data-role="button" data-rel="back">< 邮箱</a>
+        <a href="#classification" data-role="button" data-rel="popup" >分类</a>
+        <div data-role="popup" id="classification" class="ui-content"  data-position-to="window" style="width: 1500px">
+            <ul data-role="listview" >
+                <li data-icon="false"><a href="#" ><img src="image/01.png" class="ui-li-icon">节日卡</a></li>
+                <li  data-icon="false"><a href="#" ><img src="image/02.png" class="ui-li-icon">生日卡</a></li>
+                <li  data-icon="false"><a href="#" ><img src="image/03.png" class="ui-li-icon">祝福卡</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div data-role="main">
+
+    </div>
+</div>
+
+<!------------------------------页面6 更多应用--------------------------------->
+<div data-role="page" id="application">
+    <div data-role="header">
+        <h1>更多应用</h1>
+        <a href="#" data-role="button" data-rel="back">< 邮箱</a>
+    </div>
+
+    <div data-role="main">
+        <ul data-role="listview">
+            <li data-role="list-divider"><a href="#" style="color: gray;text-decoration: none"> </a></li>
+            <li ><a href="#"> <img src="image/1.png" class="ui-li-icon">日历</a></li>
+            <li ><a href="#"><img src="image/2.png" class="ui-li-icon">记事本</a></li>
+            <li data-role="list-divider"><a href="#" style="color: gray;text-decoration: none"> </a></li>
+            <li ><a href="#"><img src="image/3.png" class="ui-li-icon">文件中转站</a></li>
+            <li data-role="list-divider"><a href="#" style="color: gray;text-decoration: none"> </a></li>
+            <li ><a href="#"><img src="image/4.png" class="ui-li-icon">漂流瓶</a></li>
+        </ul>
+
+    </div>
+</div>
+
+<!----------------------------------页面7 群邮件------------------------->
+<div data-role="page" id="GroupMail">
+    <div data-role="header">
+        <h1>群邮件</h1>
+        <a href="#" data-role="button" data-rel="back">< 邮箱</a>
+    </div>
+
+    <div data-role="main">
+        <form  class="ui-filterable">
+            <input type="text" data-type="search" placeholder="搜索" >
+        </form>
+    </div>
+</div>
+
+<!----------------------------------页面8 草稿箱------------------------->
+<div data-role="page" id="drash">
+    <div data-role="header">
+        <h1>草稿箱</h1>
+        <a href="#" data-role="button" data-rel="back">< 邮箱</a>
+    </div>
+
+    <div data-role="main">
+        <form  class="ui-filterable">
+            <input type="text" data-type="search" placeholder="搜索" >
+        </form>
+    </div>
+</div>
+<!----------------------------------页面9 已发送------------------------->
+<div data-role="page" id="send">
+    <div data-role="header">
+        <h1>已发送</h1>
+        <a href="#" data-role="button" data-rel="back">< 邮箱</a>
+    </div>
+
+    <div data-role="main">
+        <form  class="ui-filterable">
+            <input type="text" data-type="search" placeholder="搜索" >
+        </form>
+    </div>
+</div>
+<!----------------------------------页面10 已删除------------------------->
+<div data-role="page" id="delete">
+    <div data-role="header">
+        <h1>已删除</h1>
+        <a href="#" data-role="button" data-rel="back">< 邮箱</a>
+    </div>
+
+    <div data-role="main">
+        <form  class="ui-filterable">
+            <input type="text" data-type="search" placeholder="搜索" >
+        </form>
+    </div>
+</div>
+<!----------------------------------页面11 垃圾箱------------------------->
+<div data-role="page" id="trash">
+    <div data-role="header">
+        <h1>垃圾箱</h1>
+        <a href="#" data-role="button" data-rel="back">< 邮箱</a>
+    </div>
+
+    <div data-role="main">
+        <form  class="ui-filterable">
+            <input type="text" data-type="search" placeholder="搜索" >
+        </form>
+    </div>
+</div>
+</body>
+</html>
