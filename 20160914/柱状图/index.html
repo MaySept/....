@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        canvas{background-color: #66bbee}
+    </style>
+</head>
+<body>
+  <canvas id="canvas" width="1200" height="600"></canvas>
+</body>
+<script>
+    var ocanvas = document.getElementById("canvas");
+    var mycanvas = ocanvas.getContext("2d");
+    var arr = [60,90,150,130,170,190,125,175,155,165,155,145];
+    function line (startX,endX,startY,endY) {
+        mycanvas.beginPath();
+        mycanvas.moveTo(startX,startY);
+        mycanvas.lineTo(endX,endY);
+        mycanvas.stroke();
+    }
+    line(300,300,80,480);
+    line(900,900,80,480);
+    function write(star,ox,oy){
+        mycanvas.beginPath();
+        mycanvas.fillStyle = "black";
+        mycanvas.fillText(star,ox,oy);
+        mycanvas.closePath();
+    }
+    for (var i=0;i<11;i++) {
+        line(300,900,i*40+80,i*40+80);
+        write(200-i*20,250,i*40+80);
+    }
+    function draw (ohgt) {
+        for (var i=0;i<12;i++) {
+            var owidth =38;
+            var oheight = ohgt[i]*2;
+            var ox = 10*(i+1)+300+i*owidth;
+            var oy = 480-oheight;
+            drawrect(ox,oy,owidth,oheight);
+            write((i+1)+"月",ox+10,500);
+        }
+    }
+    function  drawrect(ox,oy,owidth,oHeight) {
+        mycanvas.beginPath();
+        mycanvas.fillStyle = "aqua";
+        mycanvas.rect(ox,oy,owidth,oHeight);
+        mycanvas.closePath();
+        mycanvas.fill();
+    }
+    draw(arr);
+</script>
+</html>

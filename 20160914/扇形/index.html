@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <canvas id="canvas" width="500" height="500"></canvas>
+
+
+
+</body>
+<script>
+    var ocanvas = document.getElementById("canvas");
+    var mycanvas = ocanvas.getContext("2d");
+    function draw(start,per,color,fn) {
+        var nowpre = 0;
+        var ox = ((200*Math.cos(start+per/2)+250)-250)/2+250;
+        var oy = ((200*Math.sin(start+per/2)+250)-250)/2+250;
+        var time = setInterval(function() {
+            nowpre+=per/100;
+            if (nowpre>=per) {
+                clearInterval(time);
+                nowpre=per;
+            }
+            mycanvas.beginPath();
+            mycanvas.fillStyle=color;
+            mycanvas.arc(250,250,200,start,start+nowpre,false);
+            mycanvas.lineTo(250,250);
+            mycanvas.closePath();
+            mycanvas.fill();
+            if (nowpre>=per) {
+                mycanvas.beginPath();
+                mycanvas.fillStyle="black";
+                mycanvas.font="20px 宋体";
+                mycanvas.closePath();
+                mycanvas.fillText((per/(2*Math.PI))*100+"%",ox,oy);
+                fn()
+            }
+        },10)
+    }
+    function count(per){
+        return(per/100)*2*Math.PI;
+    }
+    draw(0,count(50),"red",function () {
+        draw(count(50),count(25),"yellow",function(){
+            draw(count(75),count(25),"green",function(){
+            })
+        })
+    });
+</script>
+</html>
