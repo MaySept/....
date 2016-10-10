@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="cleartype" content="on">
+    <title>你喜爱的WebAPP</title>
+    <!-content="width=device-width设备固定宽度--->
+    <meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">
+    <script src="script/jquery.js"></script>
+
+
+    <link rel="stylesheet" href="style/style.css"/>
+    <link rel="stylesheet" href="style/swiper-3.3.1.min.css"/>
+</head>
+<body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+     <div class="swiper-slide"><img src="images/2.jpg"/> </div>
+        <div class="swiper-slide"><img src="images/3.jpg"/></div>
+        <div class="swiper-slide"><img src="images/4.jpg"/></div>
+        <div class="swiper-slide"><img src="images/5.jpg"/></div>
+        <div class="swiper-slide">
+            <a href="zouxiu2.html" >
+                <img src="images/6.jpg"/>
+            </a>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="script/swiper-3.3.1.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true
+    });
+</script>
+
+<script src="script/main.js"></script>
+</html>
