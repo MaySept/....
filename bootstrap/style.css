@@ -1,0 +1,10 @@
+.nav-item{
+    margin-top: 3px;
+}
+.nav-container{
+    border-right: 1px solid gainsboro;
+}
+
+.tab-item {
+    border-bottom: 1px solid gainsboro;
+}
